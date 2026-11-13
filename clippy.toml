@@ -1,0 +1,4 @@
+# Project-wide clippy configuration.
+# Kept deliberately small: the default lint set plus a couple of thresholds that fit this codebase.
+too-many-arguments-threshold = 10
+type-complexity-threshold = 300

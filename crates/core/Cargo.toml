@@ -1,0 +1,14 @@
+[package]
+name = "tetris-core"
+description = "Gameplay domain: tetromino geometry, playfield, piece supply, scoring, handling, session lifecycle"
+version.workspace = true
+edition.workspace = true
+rust-version.workspace = true
+license.workspace = true
+
+# Deliberately ZERO dependencies (docs/adr/0004): the rules must be testable in ~1s,
+# deterministic by construction, and free of any clock, RNG or I/O they can reach for.
+[dependencies]
+
+[lib]
+path = "src/lib.rs"

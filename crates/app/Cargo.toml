@@ -1,0 +1,18 @@
+[package]
+name = "tetris-app"
+description = "Shell: winit event loop, scene builder, persistence, binary"
+version.workspace = true
+edition.workspace = true
+rust-version.workspace = true
+license.workspace = true
+
+[[bin]]
+name = "tetris"
+path = "src/main.rs"
+
+[dependencies]
+tetris-core = { workspace = true }
+tetris-render = { workspace = true }
+tetris-audio = { workspace = true }
+winit = { workspace = true }
+wgpu = { workspace = true }

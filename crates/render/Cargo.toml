@@ -1,0 +1,12 @@
+[package]
+name = "tetris-render"
+description = "Presentation context: Scene -> pixels over wgpu/Vulkan"
+version.workspace = true
+edition.workspace = true
+rust-version.workspace = true
+license.workspace = true
+
+[dependencies]
+wgpu = { workspace = true }
+pollster = { workspace = true }
+bytemuck = { workspace = true }

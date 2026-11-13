@@ -1,0 +1,29 @@
+[workspace]
+resolver = "2"
+members = ["crates/core", "crates/audio", "crates/render", "crates/app"]
+
+[workspace.package]
+version = "0.1.0"
+edition = "2021"
+rust-version = "1.87"
+license = "MIT"
+authors = ["pi"]
+repository = "local"
+
+[workspace.dependencies]
+tetris-core = { path = "crates/core" }
+tetris-audio = { path = "crates/audio" }
+tetris-render = { path = "crates/render" }
+
+winit = "0.30"
+# NOTE: default features are off on purpose — the `gles` backend needs EGL at link
+# time, and this machine has no dev packages / pkg-config (see docs/adr/0003).
+wgpu = { version = "30", default-features = false, features = ["std", "vulkan", "wgsl"] }
+pollster = "0.4"
+bytemuck = { version = "1", features = ["derive"] }
+
+[profile.release]
+opt-level = 3
+lto = "thin"
+codegen-units = 1
+panic = "abort"
